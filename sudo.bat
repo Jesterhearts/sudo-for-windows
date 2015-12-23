@@ -2,6 +2,7 @@
 :: See http://stackoverflow.com/questions/5944180/how-do-you-run-a-command-as-an-administrator-from-the-windows-shell
 
 @echo off
+setlocal
 :: Generate a uuid to user for the command and launcher script
 for /f "delims=" %%i in ('cscript //nologo %LOCALAPPDATA%\sudo_gen_uuid.vbs') do set filename=%%i
 :: This uses the magic of however cmd /c parses quotes to let pretty much any combination work
