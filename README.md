@@ -13,11 +13,18 @@ This repository adds a sudo command for windows.
 
 ## Manual install steps
 
-1. Download the repository.
-2. Place sudo.bat in your user directory
+1. Download the repository
+2. Place sudo.bat in %LOCALAPPDATA%
 3. Open regedit.exe
 4. Navigate to HKEY_CURRENT_USER\Software\Microsoft\Command Processor
 5. Add a new String value
 6. Name the value AutoRun
-7. Set the data to "doskey sudo=%HOMEPATH%\sudo.bat $*" (without the quotes)
-8. Restart any active cmd sessions.
+7. Set the data to:
+  - doskey sudo="%LOCALAPPDATA%\sudo.bat" $*
+8. Restart any active cmd sessions
+
+## Automatic Install steps
+1. Download the repository
+2. Run install_sudo.bat
+3. When prompted for admin privileges click "Yes"
+4. Restart any active cmd sessions
