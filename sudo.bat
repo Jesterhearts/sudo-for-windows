@@ -8,7 +8,7 @@ for /f "delims=" %%i in ('cscript //nologo %LOCALAPPDATA%\sudo_gen_uuid.vbs') do
 :: It even allows for stuff like sudo "del "C:\Path with spaces\temp.txt""
 echo cmd /c %* > %LOCALAPPDATA%\%filename%.bat
 findstr "^:::" "%~sf0"> %LOCALAPPDATA%\%filename%.vbs
-cscript //nologo %LOCALAPPDATA%\%filename%.vbs %CD% %filename% & del %LOCALAPPDATA%\%filename%.vbs
+cscript //nologo %LOCALAPPDATA%\%filename%.vbs "%CD%" %filename% & del %LOCALAPPDATA%\%filename%.vbs
 
 ::: Set objShell = CreateObject("Shell.Application")
 ::: Set objWshShell = WScript.CreateObject("WScript.Shell")
